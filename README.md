@@ -92,8 +92,10 @@ Route (app)                              Size     First Load JS
 
 ### Data
 
-I created a set of fake data for use which can be found at `src/seed`.
+I created a quick set of fake data for use which can be found at `src/seed`.
 Friends are denormalized with redundant data to ease fetching with no db. In relational db I would use a join, in NoSQL I probably would de-normalize in this way unless it was determined name consistency was a priority.
+
+Was just quick/dirty implementation: new data can be generated from seed `node index.js >> people.json` if desired.
 
 ```ts
 export interface User {
@@ -109,7 +111,12 @@ export interface User {
 
 ### Landing Page
 
-A list of 10 users are listed, for selection a a "friend". The page always starts with first 10 users in data set, but a user can hit the "Find more" button to get 10 new random "friends" to pick from.
+A list of 10 users are listed, for selection a a "friend". The page always starts with first 10 users in data set, but a user can hit the "Find more" button to get 10 new random "friends" to pick from. Originally I wanted to paginate, but this seemed to fit the theme I eventuallly choose for myself.
+
+#### Misses
+
+- Needs better loading state
+- A logo of some sort and fixing jumpiness of header would go along way.
 
 ### User Details Page
 

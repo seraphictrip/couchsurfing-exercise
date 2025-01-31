@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   // extract any query strings
   const offsetStr = request.nextUrl.searchParams.get("offset") || "";
   const limitStr = request.nextUrl.searchParams.get("limit") || "";
-  console.log(request.nextUrl.searchParams);
+
   let offset = parseInt(offsetStr);
   if (!isNaN(offset)) {
     offset = offset;
