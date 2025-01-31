@@ -119,7 +119,7 @@ Additional information is provided about the user. If the user has friends, they
 
 The APIs can use some love as well.
 
-### Strture
+### Structure
 
 ```sh
 ├── app
