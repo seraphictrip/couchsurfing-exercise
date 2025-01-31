@@ -113,6 +113,8 @@ export interface User {
 
 A list of 10 users are listed, for selection a a "friend". The page always starts with first 10 users in data set, but a user can hit the "Find more" button to get 10 new random "friends" to pick from. Originally I wanted to paginate, but this seemed to fit the theme I eventuallly choose for myself.
 
+![landing](design/Landing.png)
+
 #### Misses
 
 - Needs better loading state
@@ -121,6 +123,8 @@ A list of 10 users are listed, for selection a a "friend". The page always start
 ### User Details Page
 
 Additional information is provided about the user. If the user has friends, they can be linked to from bottom.
+
+![Details](design/UserDetails.png)
 
 ### APIs
 
