@@ -25,3 +25,17 @@ export default function UserListItem({ user }: UserListItemProps) {
     </Link>
   );
 }
+
+export function UserListItemSkeleton() {
+  return (
+    <div className="flex items-center gap-4 animate-pulse w-full">
+      <div className="w-16 h-16 rounded-full animate-pulse bg-gray-300">
+        &nbsp;
+      </div>
+      <div className="flex flex-col w-100 gap-2">
+        <h3 className="font-bold text-lg w-64 bg-gray-300">&nbsp;</h3>
+        <div className="font-bold text-gray-400 w-32 bg-gray-300">&nbsp;</div>
+      </div>
+    </div>
+  );
+}

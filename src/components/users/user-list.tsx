@@ -1,9 +1,9 @@
 "use client";
 
 import useSWR from "swr";
-import UserListItem from "./user-list-item";
+import UserListItem, { UserListItemSkeleton } from "./user-list-item";
 import { User } from "@/entities/user";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 const LIMIT = 10;
 
@@ -23,12 +23,7 @@ export default function UserList() {
   );
 
   if (isLoading) {
-    // TODO: add a better loading screen
-    return (
-      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 container max-w-screen-md">
-        ...loading
-      </div>
-    );
+    return <UserListSkeleton />;
   }
 
   const users = data.items;
@@ -39,7 +34,7 @@ export default function UserList() {
   }
 
   const handleFindMoreClick = () => {
-    setOffset(Math.random() * (total - LIMIT));
+    setOffset(Math.floor(Math.random() * (total - LIMIT)));
   };
 
   return (
@@ -59,3 +54,14 @@ export default function UserList() {
     </div>
   );
 }
+
+const UserListSkeleton = memo(function UserListSkeleton() {
+  return (
+    <div className="mx-auto grid grid-cols-1 sm:grid-cols-2  gap-4 container max-w-screen-md">
+      {new Array(10).fill(null).map((_, i) => {
+        return <UserListItemSkeleton key={`skele_${i}`} />;
+      })}
+      <div className="bg-gray-300 w-20 h-8">&nbsp;</div>
+    </div>
+  );
+});

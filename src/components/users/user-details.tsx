@@ -46,3 +46,34 @@ export default function UserDetails({ user }: UserDetailsProps) {
     </article>
   );
 }
+
+export function UserDetailsSkeleton() {
+  return (
+    <article className="shadow-md bg-white p-4 relative my-32 rounded-lg animate-pulse">
+      <div className="flex justify-center">
+        <div className="absolute -top-20 w-32 h-32 rounded-full mx-auto bg-gray-300">
+          &nbsp;
+        </div>
+      </div>
+      <div className="mt-16"></div>
+      <h2 className="text-3xl mx-auto mb-2 font-bold text-center w-64 bg-gray-300">
+        &nbsp;
+      </h2>
+      <div className="text-center font-bold bg-gray-300 w-32 mx-auto">
+        &nbsp;
+      </div>
+      <div className="p-4">
+        <div className="bg-gray-300 w-full my-2">&nbsp;</div>
+        <div className="bg-gray-300 w-full my-2">&nbsp;</div>
+        <div className="bg-gray-300 w-full my-2">&nbsp;</div>
+      </div>
+      <div className="p-4">
+        <h3 className="w-32 bg-gray-300">&nbsp;</h3>
+        <div className="flex flex-wrap gap-2 justify-start items-center">
+          <div className="rounded-full w-24 bg-gray-300 my-2">&nbsp;</div>
+          <div className="rounded-full w-24 bg-gray-300 my-2">&nbsp;</div>
+        </div>
+      </div>
+    </article>
+  );
+}

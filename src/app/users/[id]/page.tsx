@@ -1,6 +1,8 @@
 "use client";
 
-import UserDetails from "@/components/users/user-details";
+import UserDetails, {
+  UserDetailsSkeleton,
+} from "@/components/users/user-details";
 import { notFound, useParams } from "next/navigation";
 import useSWR from "swr";
 
@@ -22,11 +24,10 @@ export default function UserDetailsPage() {
   const { data: details, isLoading } = useSWR(`/api/users/${id}`, fetcher);
 
   if (isLoading) {
-    // TODO: skeleton loading
     return (
       <div className="bg-slate-100 h-screen">
         <div className="container mx-auto max-w-screen-sm my-32">
-          ...loading
+          <UserDetailsSkeleton />
         </div>
       </div>
     );
